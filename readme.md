@@ -57,6 +57,7 @@ LoggerConfig.fromMap(params);
 #Dynamic Sink Loading</br>
 `Sink` can be loaded dynamically with different configurations. For dynamic loading to work please make sure below requirements are met
 
+* All custom sinks should implement the Sink interface
 * Every sink need to have a default parameter less constructor so that class object can be created dynamically
 * For dynamic class loading to work, framework need to know the fully qualified name of the class like `com.saurabh.logger.sinks.FileSink` so that java reflections can be used. `Sink_class` property during configuration can be used for providing that info. In case `sink_class` property is not provided during configuration framework will try to search for the respective class based on `sink_type` property in `com.saurabh.logger.sinks` package. Currently framework provides support for `file`, `fileExtra` & `console` sink types. New `sink_type` will provided in future.
 
@@ -114,5 +115,5 @@ params.put("write_mode", "ASYNC");
 LoggerConfig.fromMap(params);
 ```
 
-#MessageFormatter
+#MessageFormatter</br>
 Framework will format the messages based on `{ Datetime [ThreadName] Level nameSpace - content } ` format.
