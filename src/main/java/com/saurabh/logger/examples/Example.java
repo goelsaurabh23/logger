@@ -19,28 +19,6 @@ public class Example {
 		
 		//checkSubclassEquality();
 		//checkSinkClassProperty();
-		
-		String url = "jdbc:mysql://localhost/test";
-		try {
-			Class.forName ("com.mysql.jdbc.Driver").newInstance ();
-		} catch (InstantiationException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IllegalAccessException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		try {
-			Connection conn = DriverManager.getConnection (url, "root", "password");
-			System.out.println(conn.toString());
-		} catch (SQLException e) {
-			System.err.println(e.getMessage());
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	/**
